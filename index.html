@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111827">
+<meta name="description" content="FordFix OBS 3.0: Diagnostic companion for 1987-1997 Ford OBS trucks">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>FordFix OBS 3.0</title>
 </head>
 <body>
@@ -46,10 +48,18 @@
   <section class="card">
     <h2>Repair Notes</h2>
     <textarea id="notes" placeholder="Write your test results or repair notes..."></textarea>
-    <button class="save" onclick="saveNotes()">Save Notes</button>
+    <div class="button-group">
+      <button class="save" onclick="saveNotes()">Save Notes</button>
+      <button class="clear" onclick="clearNotes()">Clear</button>
+    </div>
     <p id="saved"></p>
   </section>
 </main>
 <script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
 </body>
 </html>
