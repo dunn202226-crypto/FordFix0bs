@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>FordFix OBS 3.0</title>
+</head>
+<body>
+<header>
+  <div class="brand">FordFix <span>OBS</span></div>
+  <div class="version">3.0</div>
+</header>
+<main>
+  <section class="hero">
+    <h1>OBS Ford Repair Companion</h1>
+    <p>Diagnose. Test. Fix. Keep your truck moving.</p>
+  </section>
+
+  <section class="card">
+    <h2>My Truck</h2>
+    <div class="truck"><strong>1994 Ford F-250</strong><br>7.5L / 460 V8</div>
+  </section>
+
+  <section class="grid">
+    <button onclick="openFlow('starting')">Starting / No Start</button>
+    <button onclick="openFlow('spark')">Ignition / Spark</button>
+    <button onclick="openFlow('fuel')">Fuel System</button>
+    <button onclick="openFlow('relay')">Fuse / Relay Tests</button>
+  </section>
+
+  <section class="card" id="diagnostic">
+    <h2>Quick Diagnostics</h2>
+    <p id="flowText">Choose a diagnostic workflow above.</p>
+    <div id="flowButtons"></div>
+  </section>
+
+  <section class="card">
+    <h2>Vehicle Search</h2>
+    <input id="search" placeholder="Search year, engine, system..." oninput="searchData()">
+    <div id="results"></div>
+  </section>
+
+  <section class="card">
+    <h2>Repair Notes</h2>
+    <textarea id="notes" placeholder="Write your test results or repair notes..."></textarea>
+    <button class="save" onclick="saveNotes()">Save Notes</button>
+    <p id="saved"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
